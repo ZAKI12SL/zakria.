@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zakaria | Contact</title>
+  <link rel="icon" href="Photo/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#051F20;--surface:#0B2B26;--surface2:#163832;--text:#DAF1DE;--accent:#8EB69B;--glass:rgba(255,255,255,.08);}
+    body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface2));color:var(--text);transition:.4s ease,background .4s ease;padding-top:100px;}
+    body[data-theme="dark"]{--bg:#020b11;--surface:#081816;--surface2:#0f2320;--text:#e8f3df;--glass:rgba(255,255,255,.06);}
+    *{box-sizing:border-box}
+    a{text-decoration:none;color:inherit}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 40px;background:rgba(5,31,32,.82);backdrop-filter:blur(18px);position:fixed;top:0;width:100%;z-index:100;border-bottom:1px solid rgba(142,182,155,.12);}
+    .brand{font-size:1.5rem;font-weight:700;color:var(--accent);letter-spacing:.08em}
+    .nav{display:flex;justify-content:center;gap:24px;flex:1}
+    .nav a{color:var(--text);opacity:.82;font-weight:600;transition:.3s}
+    .nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
+    .controls{display:flex;align-items:center;gap:12px}
+    .pill{cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--text);transition:.3s}
+    .pill:hover{background:rgba(255,255,255,.16)}
+    .lang-saver{display:flex;gap:6px;align-items:center}
+    .lang-saver span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)}
+    .lang-saver span.active{background:var(--accent);box-shadow:0 0 0 3px rgba(142,182,155,.09)}
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px}
+    .contact-card{background:var(--glass);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);padding:40px;border-radius:30px;box-shadow:0 30px 80px rgba(0,0,0,.24);display:grid;gap:24px}
+    h2{text-align:center;color:var(--accent);font-size:2rem;margin:0}
+    form{display:grid;gap:20px}
+    input,textarea{background:var(--surface);border:1px solid rgba(255,255,255,.08);padding:15px;border-radius:14px;color:var(--text);font-family:inherit;outline:none;transition:.3s}
+    input:focus,textarea:focus{border-color:var(--accent)}
+    button{background:var(--accent);color:var(--bg);padding:15px;border:none;border-radius:14px;font-weight:700;cursor:pointer;font-size:1rem;transition:.3s}
+    button:hover{transform:translateY(-3px);filter:brightness(1.05);box-shadow:0 10px 22px rgba(0,0,0,.2)}
+    .socials{display:grid;grid-template-columns:repeat(3,minmax(120px,1fr));gap:18px;margin-top:10px}
+    .social-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:18px;text-align:center;transition:.3s}
+    .social-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+    .social-card strong{display:block;margin-bottom:10px;color:var(--accent)}
+    .social-card a{font-size:.95rem;color:var(--text);opacity:.85}
+    .click-ring{position:absolute;pointer-events:none;border-radius:50%;background:rgba(142,182,155,.18);transform:scale(0);animation:ringAnim .45s ease-out forwards;z-index:200}
+    @keyframes ringAnim{to{transform:scale(4);opacity:0}}
+    @media(max-width:768px){header{padding:18px 22px}.nav{display:none}.wrapper{margin:20px auto}}
+  </style>
+</head>
+<body>
+<header>
+  <strong class="brand">zakria</strong>
+  <img src="Photo/logo.png" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+  <nav class="nav">
+    <a class="nav-btn" href="index.html" data-tr="h">Home</a>
+    <a class="nav-btn" href="about.html" data-tr="a">About</a>
+    <a class="nav-btn" href="projects.html" data-tr="pr">My Projects</a>
+    <a class="nav-btn active" href="contact.html" data-tr="c">Contact</a>
+  </nav>
+  <div class="controls">
+    <div class="pill lang-btn" onclick="toggleLang()">AR/EN</div>
+    <div class="pill theme-btn" onclick="toggleTheme()">Dark</div>
+    <div class="lang-saver"><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  </div>
+</header>
+<div class="wrapper">
+  <div class="contact-card">
+    <h2 id="t">Get In Touch</h2>
+    <form action="https://formsubmit.co/zakislamna@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="text" name="name" id="n" placeholder="Your Name" required>
+      <input type="email" name="email" id="e" placeholder="Email Address" required>
+      <textarea name="message" id="m" rows="5" placeholder="Tell me about your project..." required></textarea>
+      <button type="submit" id="b">Send Message</button>
+    </form>
+    <div class="socials">
+      <div class="social-card"><strong data-tr="socialEmail">Gmail</strong><a href="gmail.html" id="social-gmail">zakislamna@gmail.com</a></div>
+      <div class="social-card"><strong data-tr="socialInstagram">Instagram</strong><a href="https://www.instagram.com/zakaria.to.montage/" id="social-insta">@zakaria.to.montage</a></div>
+      <div class="social-card"><strong data-tr="socialDiscord">Discord</strong><a href="#" id="social-discord">zakria_to_montage</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  const trans={en:{h:'Home',pr:'My Projects',a:'About',c:'Contact',t:'Get In Touch',n:'Your Name',e:'Email Address',m:'Tell me about your project...',b:'Send Message',socialEmail:'Gmail',socialInstagram:'Instagram',socialDiscord:'Discord'},ar:{h:'الرئيسية',pr:'مشاريعي',a:'من أنا',c:'تواصل معي',t:'تواصل معي',n:'الاسم',e:'البريد الإلكتروني',m:'أخبرني عن مشروعك...',b:'إرسال الرسالة',socialEmail:'جيميل',socialInstagram:'انستقرام',socialDiscord:'ديسكورد'}};
+  let currentLang=localStorage.getItem('zak_lang')||'en';
+  let currentTheme=localStorage.getItem('zak_theme')||'light';
+  function applyLang(lang){document.body.dir = lang==='ar'?'rtl':'ltr';document.documentElement.lang = lang;document.querySelectorAll('[data-tr]').forEach(el=>{const key=el.dataset.tr;if(trans[lang][key]) el.innerText=trans[lang][key];});document.getElementById('t').innerText=trans[lang].t;document.getElementById('n').placeholder=trans[lang].n;document.getElementById('e').placeholder=trans[lang].e;document.getElementById('m').placeholder=trans[lang].m;document.getElementById('b').innerText=trans[lang].b;localStorage.setItem('zak_lang',lang);}  
+  function applyTheme(theme){document.body.dataset.theme=theme;document.querySelector('.theme-btn').innerText=theme==='dark'?'Light':'Dark';localStorage.setItem('zak_theme',theme);}  
+  function toggleLang(){currentLang=currentLang==='en'?'ar':'en';applyLang(currentLang);}  
+  function toggleTheme(){currentTheme=currentTheme==='dark'?'light':'dark';applyTheme(currentTheme);}  
+  function createRing(e){const ring=document.createElement('span');ring.className='click-ring';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';document.body.appendChild(ring);setTimeout(()=>ring.remove(),450);}  
+  document.addEventListener('click',e=>{if(e.target.closest('.nav-btn,.pill,button'))createRing(e);});
+  applyTheme(currentTheme);applyLang(currentLang);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zakria | Gmail</title>
+  <link rel="icon" href="Photo/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#051F20;--surface:#0B2B26;--surface2:#163832;--text:#DAF1DE;--accent:#8EB69B;--glass:rgba(255,255,255,.08);}
+    body{margin:0;min-height:100vh;font-family:Inter,sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface2));color:var(--text);transition:.4s ease;background-attachment:fixed;}
+    body[data-theme="dark"]{--bg:#020b11;--surface:#081816;--surface2:#0f2320;--text:#e8f3df;--accent:#8eb69b;--glass:rgba(255,255,255,.06);}
+    *{box-sizing:border-box}
+    a{text-decoration:none;color:inherit}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 40px;background:rgba(5,31,32,.78);backdrop-filter:blur(18px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(142,182,155,.12);}
+    .header-brand{font-size:1.5rem;font-weight:700;color:var(--accent);letter-spacing:.08em}
+    .header-nav{display:flex;gap:24px;flex:1;justify-content:center}
+    .header-nav a{color:var(--text);opacity:.8;transition:.3s}
+    .header-nav a:hover,.header-nav a.active{opacity:1;color:var(--accent)}
+    .header-actions{display:flex;align-items:center;gap:12px}
+    .control-pill{cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:var(--text);transition:.3s}
+    .control-pill:hover{background:rgba(255,255,255,.14)}
+    section{padding:100px 40px 60px}
+    .card{max-width:760px;margin:0 auto;background:var(--glass);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);border-radius:30px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.28);}
+    .card h1{margin-bottom:18px;font-size:2.8rem;color:var(--accent)}
+    .card p{line-height:1.75;opacity:.92;margin-bottom:22px;font-size:1.05rem}
+    .email-box{display:grid;gap:16px;padding:24px;border-radius:24px;background:rgba(255,255,255,.05);border:1px solid rgba(142,182,155,.12);}
+    .email-box span{display:flex;justify-content:space-between;align-items:center;font-size:1rem}
+    .email-box strong{color:var(--accent)}
+    .email-box a{color:var(--text);opacity:.95;transition:.3s}
+    .email-box a:hover{color:var(--accent)}
+    .action{margin-top:30px;text-align:center}
+    .action a{display:inline-block;padding:14px 30px;border-radius:999px;background:var(--accent);color:var(--bg);font-weight:700;transition:.3s}
+    .action a:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(142,182,155,.25)}
+    .click-ring{position:absolute;pointer-events:none;border-radius:50%;background:rgba(142,182,155,.16);transform:scale(0);animation:ringAnim .45s ease-out forwards;z-index:200}
+    @keyframes ringAnim{to{transform:scale(4);opacity:0}}
+    @media(max-width:880px){header{flex-wrap:wrap;padding:18px 24px}.header-nav{display:none}.card{padding:32px}}    
+  </style>
+</head>
+<body>
+<header>
+  <strong class="header-brand">zakria</strong>
+  <img src="Photo/logo.png" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+  <nav class="header-nav">
+    <a class="nav-btn" href="index.html" data-tr="home">Home</a>
+    <a class="nav-btn" href="about.html" data-tr="about">About Me</a>
+    <a class="nav-btn" href="projects.html" data-tr="projects">Projects</a>
+    <a class="nav-btn active" href="contact.html" data-tr="contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <div class="control-pill lang-btn" onclick="toggleLang()">AR / EN</div>
+    <div class="control-pill theme-btn" onclick="toggleTheme()">Dark</div>
+  </div>
+</header>
+<section>
+  <div class="card">
+    <h1 data-tr="title">Contact by Gmail</h1>
+    <p data-tr="subtitle">استخدم البريد الإلكتروني التالي للتواصل السريع. سيتم الرد في أقرب وقت.</p>
+    <div class="email-box">
+      <span><strong data-tr="labelEmail">Gmail</strong><a href="mailto:zakislamna@gmail.com">zakislamna@gmail.com</a></span>
+      <span><strong data-tr="labelInstagram">Instagram</strong><a href="https://www.instagram.com/zakaria.to.montage/">@zakaria.to.montage</a></span>
+      <span><strong data-tr="labelDiscord">Discord</strong><a href="https://discord.com/users/zakria_to_montage">zakria_to_montage</a></span>
+    </div>
+    <div class="action"><a href="contact.html" data-tr="back">Back to Contact</a></div>
+  </div>
+</section>
+<script>
+  const trans = {
+    en:{home:'Home',about:'About Me',projects:'Projects',contact:'Contact',title:'Contact by Gmail',subtitle:'Use the email below to reach out directly and receive a fast response.',labelEmail:'Gmail',labelInstagram:'Instagram',labelDiscord:'Discord',back:'Back to Contact'},
+    ar:{home:'الرئيسية',about:'من أنا',projects:'مشاريعي',contact:'تواصل معي',title:'تواصل عبر الجيميل',subtitle:'استخدم البريد الإلكتروني التالي للتواصل السريع. سيتم الرد في أقرب وقت.',labelEmail:'جيميل',labelInstagram:'انستقرام',labelDiscord:'ديسكورد',back:'العودة إلى التواصل'}
+  };
+  const savedLang = localStorage.getItem('zak_lang') || 'en';
+  const savedTheme = localStorage.getItem('zak_theme') || 'light';
+  let currentLang = savedLang;
+  let currentTheme = savedTheme;
+  function applyLang(lang){ document.documentElement.lang = lang; document.body.dir = lang==='ar' ? 'rtl' : 'ltr'; document.querySelectorAll('[data-tr]').forEach(el=>{const key=el.dataset.tr; if(trans[lang][key]) el.innerHTML = trans[lang][key];}); localStorage.setItem('zak_lang', lang); }
+  function applyTheme(theme){ document.body.dataset.theme = theme; document.querySelector('.theme-btn').innerText = theme==='dark' ? 'Light' : 'Dark'; localStorage.setItem('zak_theme', theme); }
+  function toggleLang(){ currentLang = currentLang==='en' ? 'ar' : 'en'; applyLang(currentLang); }
+  function toggleTheme(){ currentTheme = currentTheme==='dark' ? 'light' : 'dark'; applyTheme(currentTheme); }
+  function animateClick(event){ const ring=document.createElement('span'); ring.className='click-ring'; ring.style.left = event.clientX + 'px'; ring.style.top = event.clientY + 'px'; document.body.appendChild(ring); setTimeout(()=> ring.remove(),450); }
+  document.addEventListener('click', e=>{ if(e.target.closest('.nav-btn, .control-pill, .action a')) animateClick(e); });
+  applyTheme(currentTheme); applyLang(currentLang);
+</script>
+</body>
+</html>

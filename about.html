@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="Photo/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zakria | About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#051F20;--surface:#0B2B26;--surface2:#163832;--text:#DAF1DE;--accent:#8EB69B;--glass:rgba(255,255,255,.08);--muted:#B1D3B0;}
+    body{margin:0;min-height:100vh;font-family:Inter,sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface2));color:var(--text);transition:.4s ease, background .4s ease;}
+    body[data-theme="dark"]{--bg:#020b11;--surface:#081816;--surface2:#0f2320;--text:#e8f3df;--glass:rgba(255,255,255,.06);}
+    *{box-sizing:border-box}
+    a{text-decoration:none;color:inherit}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 40px;background:rgba(5,31,32,.82);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(142,182,155,.12);}
+    .brand{font-size:1.5rem;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+    .nav{display:flex;justify-content:center;gap:24px;flex:1}
+    .nav a{color:var(--text);opacity:.82;font-weight:600;transition:.3s}
+    .nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
+    .controls{display:flex;align-items:center;gap:12px}
+    .pill{cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--text);transition:.3s}
+    .pill:hover{background:rgba(255,255,255,.16)}
+    .lang-saver{display:flex;gap:6px;align-items:center}
+    .lang-saver span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)}
+    .lang-saver span.active{background:var(--accent);box-shadow:0 0 0 3px rgba(142,182,155,.09)}
+    section{padding:80px 60px}
+    h1{font-size:3.2rem;margin-bottom:24px;color:var(--accent)}
+    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .bio p{opacity:.92;line-height:1.85;font-size:1.1rem;max-width:680px}
+    .skill{margin-bottom:18px}
+    .skill span{font-size:.95rem;opacity:.88;display:flex;justify-content:space-between}
+    .bar{height:10px;background:var(--surface);border-radius:12px;overflow:hidden;margin-top:8px}
+    .fill{height:100%;background:linear-gradient(90deg,var(--surface2),var(--accent));width:0;animation:loadSkill 1.5s ease-out forwards}
+    @keyframes loadSkill{to{width:var(--w)}}
+    .glass-card{background:var(--glass);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);border-radius:28px;padding:36px;box-shadow:0 24px 60px rgba(0,0,0,.22);transition:transform .35s ease,box-shadow .35s ease}
+    .glass-card:hover{transform:translateY(-4px);box-shadow:0 30px 70px rgba(0,0,0,.28)}
+    .glass-card h2{margin-bottom:16px;font-size:1.8rem;color:var(--accent)}
+    .glass-card p{opacity:.92;line-height:1.75}
+    .glass-card ul{list-style:none;padding:0;margin:0;color:var(--text);line-height:1.8}
+    .glass-card li{margin-bottom:12px}
+    footer{text-align:center;padding:50px;opacity:.6}
+    .click-ring{position:absolute;pointer-events:none;border-radius:50%;background:rgba(142,182,155,.18);transform:scale(0);animation:ringAnim .45s ease-out forwards;z-index:200}
+    @keyframes ringAnim{to{transform:scale(4);opacity:0}}
+    @media(max-width:900px){section{padding:60px 24px}.about-wrap{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <strong class="brand">zakria</strong>
+  <img src="Photo/logo.png" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+  <nav class="nav">
+    <a class="nav-btn" href="index.html" data-tr="h">Home</a>
+    <a class="nav-btn active" href="about.html" data-tr="a">About Me</a>
+    <a class="nav-btn" href="projects.html" data-tr="pr">Projects</a>
+    <a class="nav-btn" href="contact.html" data-tr="c">Contact</a>
+  </nav>
+  <div class="controls">
+    <div class="pill lang-btn" onclick="toggleLang()">AR / EN</div>
+    <div class="pill theme-btn" onclick="toggleTheme()">Dark</div>
+    <div class="lang-saver"><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  </div>
+</header>
+<section>
+  <h1 data-tr="at">About Me</h1>
+  <div class="about-wrap">
+    <div class="bio">
+      <p data-tr="desc">I'm Zakaria, a graphic designer and video editor. I have experience that qualifies me to work with large companies. I create highly professional videos, whether cinematic or regular YouTube content.</p>
+      <div class="skill"><span data-tr="s1">Video Editing (Premiere Pro) <b>90%</b></span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+      <div class="skill"><span data-tr="s2">Motion Design (After Effects) <b>80%</b></span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+      <div class="skill"><span data-tr="s3">Graphic Design <b>75%</b></span><div class="bar"><div class="fill" style="--w:75%"></div></div></div>
+    </div>
+    <div class="glass-card">
+      <h2 data-tr="wid">What I Do</h2>
+      <p data-tr="intro">I deliver strong visual stories using polished editing, motion design, and a cinematic feel. Every project is built with modern style and clear pacing.</p>
+      <ul data-tr="list">
+        <li>• Cinematic video editing</li>
+        <li>• YouTube & social media content</li>
+        <li>• Motion graphics & visual identity</li>
+        <li>• Freelance Unity programming</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer>© 2026 zakria</footer>
+<script>
+  const trans={en:{h:'Home',a:'About Me',pr:'Projects',c:'Contact',at:'About Me',wid:'What I Do',desc:'I\'m Zakaria, a graphic designer and video editor. I have experience that qualifies me to work with large companies. I create highly professional videos, whether cinematic or regular YouTube content.',s1:'Video Editing (Premiere Pro) 90%',s2:'Motion Design (After Effects) 80%',s3:'Graphic Design 75%',intro:'I deliver strong visual stories using polished editing, motion design, and a cinematic feel. Every project is built with modern style and clear pacing.',list:'• Cinematic video editing<br>• YouTube & social media content<br>• Motion graphics & visual identity<br>• Freelance Unity programming'},ar:{h:'الرئيسية',a:'من أنا',pr:'مشاريعي',c:'تواصل معي',at:'من أنا',wid:'ماذا أفعل',desc:'أنا زكريا، مصمم جرافيك ومحرر فيديو. لدي خبرة تؤهلني للعمل مع الشركات الكبرى. أقوم بإنشاء فيديوهات باحترافية عالية، سواء كانت سينمائية أو محتوى يوتيوب عادي.',s1:'تحرير الفيديو (Premiere Pro) 90%',s2:'موشن جرافيك (After Effects) 80%',s3:'تصميم الجرافيك 75%',intro:'أقدّم قصصاً مرئية قوية من خلال تحرير مصقول، وموشن جرافيك، وأسلوب سينمائي. كل مشروع يبنى بأسلوب حديث وتوقيت واضح.',list:'• تحرير الفيديو السينمائي<br>• محتوى اليوتيوب ووسائل التواصل الاجتماعي<br>• الموشن جرافيك والهوية البصرية<br>• مبرمج مستقل على Unity'}};
+  let lang=localStorage.getItem('zak_lang')||'en';
+  let theme=localStorage.getItem('zak_theme')||'light';
+  function apply(){document.body.dataset.theme=theme;document.querySelector('.theme-btn').innerText=theme==='dark'?'Light':'Dark';document.documentElement.lang=lang;document.body.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-tr]').forEach(el=>{const key=el.dataset.tr;if(trans[lang][key]) el.innerHTML=trans[lang][key];});}
+  function toggleLang(){lang = lang==='en'?'ar':'en';localStorage.setItem('zak_lang',lang);apply();}
+  function toggleTheme(){theme = theme==='dark'?'light':'dark';localStorage.setItem('zak_theme',theme);apply();}
+  function createRing(e){const ring=document.createElement('span');ring.className='click-ring';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';document.body.appendChild(ring);setTimeout(()=>ring.remove(),450);}
+  document.addEventListener('click',e=>{if(e.target.closest('.nav-btn,.pill'))createRing(e);});
+  apply();
+</script>
+</body>
+</html>
