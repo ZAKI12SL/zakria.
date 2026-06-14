@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zakria | Home</title>
+  <link rel="icon" href="Photo/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#051F20;--surface:#0B2B26;--surface2:#163832;--text:#DAF1DE;--accent:#8EB69B;--glass:rgba(255,255,255,.08);--muted:#A8CBB1;}
+    body{margin:0;min-height:100vh;font-family:'Inter',sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface2));color:var(--text);transition:.4s ease, background .4s ease;overflow-x:hidden;position:relative;}
+    body[data-theme="dark"]{--bg:#020b11;--surface:#081816;--surface2:#0f2320;--text:#e8f3df;--glass:rgba(255,255,255,.06);}
+    *{box-sizing:border-box}
+    a{text-decoration:none;color:inherit;transition:.3s}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 40px;background:rgba(5,31,32,.82);backdrop-filter:blur(18px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(142,182,155,.12);}
+    .brand{font-size:1.5rem;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+    .nav{display:flex;justify-content:center;gap:24px;flex:1}
+    .nav a{color:var(--text);opacity:.8;font-weight:600;font-size:.95rem}
+    .nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
+    .controls{display:flex;align-items:center;gap:12px}
+    .pill{cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--text);transition:.3s}
+    .pill:hover{background:rgba(255,255,255,.16)}
+    .lang-saver{display:flex;gap:6px;align-items:center}
+    .lang-saver span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2)}
+    .lang-saver span.active{background:var(--accent);box-shadow:0 0 0 3px rgba(142,182,155,.08)}
+    .hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;position:relative;z-index:1;}
+    .hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,var(--accent) 0%,transparent 72%);opacity:.22;filter:blur(90px);z-index:-1;animation:pulse 6s infinite alternate;}
+    @keyframes pulse{from{transform:scale(1)}to{transform:scale(1.2)}}
+    h1{font-size:4rem;line-height:1.05;margin-bottom:20px;background:linear-gradient(90deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+    .sub{font-size:1.2rem;max-width:640px;opacity:.85;margin-bottom:40px;line-height:1.65;}
+    .cta-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:var(--accent);color:var(--bg);border-radius:999px;font-weight:700;font-size:1.05rem;box-shadow:0 14px 30px rgba(142,182,155,.24);transition:.35s ease;}
+    .cta-btn:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(142,182,155,.32)}
+    .click-ring{position:absolute;pointer-events:none;border-radius:50%;background:rgba(142,182,155,.18);transform:scale(0);animation:ringAnim .45s ease-out forwards;z-index:200}
+    @keyframes ringAnim{to{transform:scale(4);opacity:0}}
+    footer{text-align:center;padding:50px;opacity:.55;font-size:.92rem}
+    @media(max-width:768px){.nav{display:none}h1{font-size:2.6rem}header{padding:18px 22px}}
+  </style>
+</head>
+<body>
+<header>
+  <strong class="brand">zakria</strong>
+  <img src="Photo/logo.png" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+  <nav class="nav">
+    <a class="nav-btn active" href="index.html" data-tr="home">Home</a>
+    <a class="nav-btn" href="about.html" data-tr="about">About Me</a>
+    <a class="nav-btn" href="projects.html" data-tr="projects">Projects</a>
+    <a class="nav-btn" href="contact.html" data-tr="contact">Contact</a>
+  </nav>
+  <div class="controls">
+    <div class="pill lang-btn" onclick="toggleLang()">EN / AR</div>
+    <div class="pill theme-btn" onclick="toggleTheme()">Dark</div>
+    <div class="lang-saver"><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  </div>
+</header>
+<section class="hero">
+  <h1 id="hero-title" data-tr="heroTitle">I turn ideas into<br>powerful videos</h1>
+  <p class="sub" id="hero-sub" data-tr="heroSub">Professional video editor specialized in cinematic styling, storytelling, and high-retention YouTube content.</p>
+  <a href="projects.html" class="cta-btn" data-push data-tr="cta">See My Work</a>
+</section>
+<footer>© 2026 zakria</footer>
+<script>
+  const trans = {
+    en:{home:'Home',about:'About Me',projects:'Projects',contact:'Contact',heroTitle:'I turn ideas into<br>powerful videos',heroSub:'Professional video editor specialized in cinematic styling, storytelling, and high-retention YouTube content.',cta:'See My Work'},
+    ar:{home:'الرئيسية',about:'من أنا',projects:'مشاريعي',contact:'تواصل معي',heroTitle:'أحوّل أفكارك إلى<br>قصص بصرية مذهلة',heroSub:'مونتير محترف متخصص في المونتاج السينمائي، السرد القصصي، ومحتوى اليوتيوب عالي الجودة.',cta:'شاهد أعمالي'}
+  };
+  let currentLang = localStorage.getItem('zak_lang') || 'en';
+  let currentTheme = localStorage.getItem('zak_theme') || 'light';
+  function applyTheme(theme){document.body.dataset.theme = theme;document.querySelector('.theme-btn').innerText = theme==='dark' ? 'Light' : 'Dark';localStorage.setItem('zak_theme', theme);}  
+  function applyLang(lang){document.documentElement.lang = lang;document.body.dir = lang==='ar' ? 'rtl' : 'ltr';document.querySelectorAll('[data-tr]').forEach(el=>{const key=el.dataset.tr;if(trans[lang][key]) el.innerHTML = trans[lang][key];});localStorage.setItem('zak_lang', lang);}  
+  function toggleLang(){currentLang = currentLang==='en' ? 'ar' : 'en';applyLang(currentLang);}  
+  function toggleTheme(){currentTheme = currentTheme==='dark' ? 'light' : 'dark';applyTheme(currentTheme);}  
+  function createClickRing(event){const ring=document.createElement('span');ring.className='click-ring';ring.style.left = `${event.clientX}px`;ring.style.top = `${event.clientY}px`;document.body.appendChild(ring);setTimeout(() => ring.remove(),450);}  
+  document.addEventListener('click', e => { if(e.target.closest('.nav-btn, .pill, .cta-btn')){ createClickRing(e); const link = e.target.closest('a[data-push]'); if(link){e.preventDefault(); setTimeout(()=> window.location = link.href, 240);} } });  
+  applyTheme(currentTheme);applyLang(currentLang);
+</script>
+</body>
+</html>

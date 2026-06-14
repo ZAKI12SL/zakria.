@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Zakaria</title>
+  <link rel="icon" href="Photo/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#051F20;--surface:#0B2B26;--surface2:#163832;--text:#DAF1DE;--accent:#8EB69B;--glass:rgba(255,255,255,.08);}
+    body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface2));color:var(--text);transition:.4s ease,background .4s ease;}
+    body[data-theme="dark"]{--bg:#020b11;--surface:#081816;--surface2:#0f2320;--text:#e8f3df;--glass:rgba(255,255,255,.06);}
+    *{box-sizing:border-box}
+    a{text-decoration:none;color:inherit}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 40px;background:rgba(5,31,32,.82);backdrop-filter:blur(18px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(142,182,155,.12);}
+    .brand{font-size:1.5rem;font-weight:700;color:var(--accent);letter-spacing:.08em}
+    .nav{display:flex;justify-content:center;gap:24px;flex:1}
+    .nav a{color:var(--text);opacity:.84;font-weight:600;transition:.3s}
+    .nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
+    .controls{display:flex;align-items:center;gap:12px}
+    .pill{cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--text);transition:.3s}
+    .pill:hover{background:rgba(255,255,255,.16)}
+    .lang-saver{display:flex;gap:6px;align-items:center}
+    .lang-saver span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)}
+    .lang-saver span.active{background:var(--accent);box-shadow:0 0 0 3px rgba(142,182,155,.09)}
+    .page-head{padding:40px 40px 0;max-width:1100px;margin:0 auto}
+    .page-head h1{margin:0;font-size:3rem;color:var(--accent)}
+    .page-head p{opacity:.85;line-height:1.8;max-width:760px;margin-top:14px;font-size:1.05rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;padding:40px;max-width:1160px;margin:0 auto}
+    .card{background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.22);opacity:0;transform:translateY(20px);transition:.35s ease;}
+    .card.show{opacity:1;transform:translateY(0)}
+    .video-wrap{position:relative;overflow:hidden;background:#000}
+    video{width:100%;height:auto;display:block;max-height:360px;}
+    .project-body{padding:22px;display:grid;gap:12px}
+    .project-body h3{margin:0;font-size:1.2rem;color:var(--accent)}
+    .project-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.95rem;color:var(--text);opacity:.9}
+    .project-desc{margin-top:12px;line-height:1.75;opacity:.92;}
+    .click-ring{position:absolute;pointer-events:none;border-radius:50%;background:rgba(142,182,155,.18);transform:scale(0);animation:ringAnim .45s ease-out forwards;z-index:200}
+    @keyframes ringAnim{to{transform:scale(4);opacity:0}}
+    @media(max-width:820px){header{flex-wrap:wrap;padding:18px 24px}.page-head{padding-top:24px}.grid{padding:24px}}
+  </style>
+</head>
+<body>
+<header>
+  <strong class="brand">zakria</strong>
+  <img src="Photo/logo.png" alt="Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+  <nav class="nav">
+    <a class="nav-btn" href="index.html" data-tr="home">Home</a>
+    <a class="nav-btn" href="about.html" data-tr="about">About Me</a>
+    <a class="nav-btn active" href="projects.html" data-tr="projects">Projects</a>
+    <a class="nav-btn" href="contact.html" data-tr="contact">Contact</a>
+  </nav>
+  <div class="controls">
+    <div class="pill lang-btn" onclick="toggleLang()">AR / EN</div>
+    <div class="pill theme-btn" onclick="toggleTheme()">Dark</div>
+    <div class="lang-saver"><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  </div>
+</header>
+<div class="page-head">
+  <h1 data-tr="title">My Projects</h1>
+  <p data-tr="subtitle">A selection of video work with title, duration, and precise descriptions ready for later edits.</p>
+</div>
+<div class="grid">
+  <div class="card"><div class="video-wrap"><video controls src="Vedio/mental.mp4"></video></div><div class="project-body"><h3 data-tr="p1title"> The danger of games for children!!</h3><div class="project-meta"><span data-tr="duration">Duration: 5Hours</span><span data-tr="work">Role: Video Editing</span></div><p class="project-desc" data-tr="p1desc">A polished motion edit with dynamic cuts, cinematic color, and branded visual storytelling for social impact content.</p></div></div>
+  <div class="card"><div class="video-wrap"><video controls src="Vedio/VV.mp4"></video></div><div class="project-body"><h3 data-tr="p2title">Partnership Offer</h3><div class="project-meta"><span data-tr="duration">Duration: 2Days/4Hours</span><span data-tr="work">Role: Motion Design</span></div><p class="project-desc" data-tr="p2desc">A compact video showcase with strong motion graphics, refined pacing, and professional animated transitions.</p></div></div>
+  <div class="card"><div class="video-wrap"><video controls src="Vedio/بودكاست_2.mp4"></video></div><div class="project-body"><h3 data-tr="p3title">The virtue of the Qur’an</h3><div class="project-meta"><span data-tr="duration">Duration: 7Hours</span><span data-tr="work">Role: Editing & Color</span></div><p class="project-desc" data-tr="p3desc">A polished podcast cut with seamless flow, clear audio focus, and elegant graphic overlays.</p></div></div>
+  <div class="card"><div class="video-wrap"><video controls src="Vedio/تحدي الانفجار مع هو_6.mp4"></video></div><div class="project-body"><h3 data-tr="p4title">Mincrafet Challenge</h3><div class="project-meta"><span data-tr="duration">Duration: 9Hours</span><span data-tr="work">Role: Editing & FX</span></div><p class="project-desc" data-tr="p4desc">A high-energy edit with dramatic timing, sound design, and cinematic motion for attention-grabbing storytelling.</p></div></div>
+</div>
+<script src="projcjs.js" defer></script>
+</body>
+</html>
